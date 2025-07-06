@@ -204,3 +204,16 @@ window.addEventListener('scroll', () => {
         header.style.backdropFilter = 'none';
     }
 });
+
+// Handle app screenshot loading
+const appScreenshot = document.querySelector('.app-screenshot');
+if (appScreenshot) {
+    appScreenshot.addEventListener('error', function() {
+        // If image fails to load, replace with a placeholder
+        this.style.display = 'none';
+        const placeholder = document.createElement('div');
+        placeholder.className = 'image-placeholder';
+        placeholder.innerHTML = '<p>📱</p><p>App Screenshot</p>';
+        this.parentNode.appendChild(placeholder);
+    });
+}

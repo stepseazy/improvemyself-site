@@ -160,29 +160,40 @@ nav {
     animation: float 6s ease-in-out infinite;
 }
 
-.phone-mockup {
-    width: 300px;
-    height: 600px;
-    background: var(--bg-white);
+.app-screenshot {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
     border-radius: 40px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-    padding: 20px;
-    position: relative;
-    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    object-fit: cover;
+    display: block;
 }
 
-.phone-screen {
-    width: 100%;
-    height: 100%;
+.app-screenshot:hover {
+    transform: scale(1.05);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+}
+
+.image-placeholder {
+    width: 300px;
+    height: 600px;
     background: var(--gradient-3);
-    border-radius: 20px;
+    border-radius: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: white;
     text-align: center;
-    padding: 2rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+}
+
+.image-placeholder p:first-child {
+    font-size: 4rem;
+    margin-bottom: 1rem;
 }
 
 /* Section Headers */
@@ -635,7 +646,18 @@ footer {
     }
 
     .hero-image {
-        display: none;
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+    }
+
+    .app-screenshot {
+        max-width: 250px;
+    }
+
+    .image-placeholder {
+        width: 250px;
+        height: 500px;
     }
 
     .cta-buttons {
